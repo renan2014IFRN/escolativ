@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<main>
+		<h1>Escola</h1>
+		<section>
+			<img src="{{ aluno.image }}"/>
+			<h2>{{ aluno.nome }}</h2>
+			<p class="aluno-matricula">{{aluno.matricula}}</p>
+			<p class="aluno-turma">{{aluno.turma}}</p>
+			<p class="aluno-turma">{{aluno.email}}</p>
+            <a href="editar">Editar</a>
+            {%  for freq in frequencias %}
+                 <p class="aluno-frequencia">{{freq}}</p>
+            {% endfor %}
+            <br><br>
+		</section>
+	</main>
+{% endblock %}

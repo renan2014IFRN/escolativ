@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<main>
+		<h1>Escola</h1>
+
+        <h3>Alunos</h3>
+		{% for aluno in aluno%}
+		<section>
+			<a href="{% url 'detalhes' aluno.slug %}"> <img src="{{ aluno.image }}"/></a>
+			<h2>{{ aluno.nome }}</h2>
+			<p class="aluno-matricula">{{aluno.matricula}}</p>
+			<p class="aluno-turma">{{aluno.turma}}</p>
+		</section>
+		{% endfor %}
+        <h3>Turmas</h3>
+        {% for turma in turmas %}
+            <section>
+            <p class="turma-nome">Nome: {{turma}}</p>
+            <p class="turma-nome">Horário: {{turma.horario}}</p>
+            <p class="turma-nome">Data de Inicio: {{turma.dataInicio}}</p>
+            <p class="turma-nome">Data Final: {{turma.dataFinal}}</p>
+            
+            </section>
+        {%  endfor %}
+
+
+
+	</main>
+{% endblock %}
